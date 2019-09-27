@@ -20,7 +20,7 @@ def collect_word_in_news_json(data):
         words_collection = news['description'].split()
         for word in words_collection:
             if len(word) > 5:
-                top_words.append(word)
+                top_words.append(word.lower())
     top_words.sort()
     return top_words
 
@@ -36,7 +36,7 @@ def collect_word_in_news_xml(root):
     top_words = []
     for word in news_text_list:
         if len(word) > 5:
-            top_words.append(word)
+            top_words.append(word.lower())
     top_words.sort()
     return top_words
 
